@@ -9,6 +9,17 @@
   </head>
 
   <body>
+    <div class="flex-wrapper">
+      <div class="nav-wrapper">
+        <div class="left">
+          <span><%= link_to 'Home', root_path %></span>
+        </div>
+        <div class="right">
+          <span>New Post</span>
+          <span>Log in</span>
+        </div>
+      </div>
+    </div>
     <div id="flex-wrapper">
       <%= yield %>
     </div>
