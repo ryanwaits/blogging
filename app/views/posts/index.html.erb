@@ -1,8 +1,7 @@
 <div class="sidebar" style="flex-direction: column; align-items: center; overflow: scroll;">
   <div class="top-menu">
     <img src="https://cdn-images-1.medium.com/fit/c/100/100/0*L7WQbejWZTmPdX6Q.jpeg" alt="" style="border-radius: 50%; margin-bottom: 25%;">
-    <span class="section">Website</span>
-    <span>Blog</span>
+    <span class="section">Blog</span>
     <span>About</span>
     <span>Categories</span>
     <span class="section">Social</span>
@@ -13,6 +12,9 @@
   </div>
 </div>
 <div class="main-content">
+    <div class="notice">
+        <%= flash.notice %>
+      </div>
     <% if @posts.empty? %>
       <div class="post">
         <h1 class="title">There are <%= @posts.count %> posts</h1>
