@@ -1,7 +1,7 @@
 <div class="sidebar">
   <div class="show-post">
     <h1 class="title"><%= @post.title %></h1>
-    <p class="author">by Ryan Waits</p>
+    <p class="author">by <%= @post.user.username %></p>
   </div>
 </div>
 <div class="main-content">
