@@ -1,0 +1,8 @@
+<div class="form-wrapper">
+  <%= simple_form_for :session, url: sessions_path do |f| %>
+
+    <%= f.input :username, label: false, placeholder: 'Username' %>
+    <%= f.password_field :password, label: false, placeholder: 'Password' %>
+    <%= f.submit 'Log in' %>
+  <% end %>
+</div>
