@@ -1,7 +1,22 @@
-<h1>Posts</h1>
-<% @posts.each do |post| %>
-  <div class="post_wrapper">
-    <h2 class="title"><%= link_to post.title, post_path(post) %></h2>
-    <p class="date"><%= post.created_at.strftime('%B %d %Y') %></p>
+<div class="sidebar" style="flex-direction: column; align-items: center; overflow: scroll;">
+  <div class="top-menu">
+    <img src="https://cdn-images-1.medium.com/fit/c/100/100/0*L7WQbejWZTmPdX6Q.jpeg" alt="" style="border-radius: 50%; margin-bottom: 25%;">
+    <span class="section">Website</span>
+    <span>Blog</span>
+    <span>About</span>
+    <span>Categories</span>
+    <span class="section">Social</span>
+    <span><a href="#" target="_blank">Twitter</a></span>
+    <span><a href="#" target="_blank">GitHub</a></span>
+    <span><a href="#" target="_blank">Medium</a></span>
+    <span><a href="#" target="_blank">LinkedIn</a></span>
   </div>
-<% end %>
+</div>
+<div class="main-content">
+    <% @posts.each do |post| %>
+      <div class="post">
+        <h1 class="title"><%= link_to post.title, post_path(post) %></h1>
+        <p class="author">submitted on <%= post.created_at.strftime('%B %d %Y') %></p>
+      </div>
+    <% end %>
+</div>
