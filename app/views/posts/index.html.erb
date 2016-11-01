@@ -13,10 +13,16 @@
   </div>
 </div>
 <div class="main-content">
-    <% @posts.each do |post| %>
+    <% if @posts.empty? %>
       <div class="post">
-        <h1 class="title"><%= link_to post.title, post_path(post) %></h1>
-        <p class="author">submitted on <%= post.created_at.strftime('%B %d %Y') %></p>
+        <h1 class="title">There are <%= @posts.count %> posts</h1>
       </div>
+    <% else %>
+      <% @posts.each do |post| %>
+        <div class="post">
+          <h1 class="title"><%= link_to post.title, post_path(post) %></h1>
+          <p class="author">submitted on <%= post.created_at.strftime('%B %d %Y') %></p>
+        </div>
+      <% end %>
     <% end %>
 </div>

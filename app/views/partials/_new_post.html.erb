@@ -1,5 +1,17 @@
-<%= simple_form_for :post, url: posts_path do |f| %>
-  <%= f.input :title %>
-  <%= f.text_area :body %>
-  <%= f.submit :submit %>
-<% end %>
+<div class="form-wrapper">
+  <%= simple_form_for :post, url: posts_path do |f| %>
+
+    <% if @post.errors.any? %>
+      <div class="post">
+        <h3 class="title">There are <%= pluralize(@post.errors.count, 'error') %></h3>
+        <% @post.errors.full_messages.each do |message| %>
+          <p class="author"><%= message %></p>
+        <% end %>
+      </div>
+    <% end %>
+
+    <%= f.input :title, label: false, placeholder: 'Title' %>
+    <%= f.text_area :body, label: false, placeholder: 'Write your post' %>
+    <%= f.submit 'Submit Post' %>
+  <% end %>
+</div>

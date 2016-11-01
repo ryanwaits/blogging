@@ -33,6 +33,32 @@
  p {
   line-height: 150%;
  }
+ input, textarea {
+  background: transparent;
+  border: none;
+  height: 7.5vh;
+  width: 250%;
+  padding: 5%;
+  margin: 2%;
+  font-size: 1.25em;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  resize: none;
+ }
+ textarea {
+  margin: 25% 0;
+  height: 35vh;
+  width: 350%;
+ }
+ input[type='submit'] {
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  width: 75%;
+  cursor: pointer;
+ }
  #flex-wrapper {
   display: flex;
   height: 100vh;
@@ -85,7 +111,7 @@
  .section {
   font-size: 1.25em;
   margin: 5% 0;
-  color: green;
+  color: rgb(39, 174, 96);
  }
  .sidebar .show-post {
   color: #333;
@@ -114,7 +140,9 @@
  .author {
   font-family: 'Neuton'; font-weight: 300;
  }
-
+ .form-wrapper {
+  margin: 5% 10%;
+ }
 
 
 
