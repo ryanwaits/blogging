@@ -5,8 +5,20 @@
   </div>
 </div>
 <div class="main-content">
+  <div class="notice">
+    <%= flash.notice %>
+  </div>
   <div class="show-post">
     <h1 class="title" style="padding: 1%;"><%= @post.title %></h1>
     <p><%= @post.body %></p>
+  </div>
+  <div class="comments">
+    <%= render @post.comments.order('created_at DESC') %>
+  </div>
+  <div class="form-wrapper" style="margin: 0;">
+    <%= simple_form_for [@post, @post.comments.build] do |f|%>
+      <%= f.text_area :body, class: 'text-area' %>
+      <%= f.submit 'Post comment' %>
+    <% end %>
   </div>
 </div>

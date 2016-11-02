@@ -1,8 +1,8 @@
-<div class="form-wrapper">
+<div class="form-wrapper" style="display: flex; flex-direction: column; margin: 5% 10%;">
+  <h1 class="title">Log in</h1>
   <%= simple_form_for :session, url: sessions_path do |f| %>
-
-    <%= f.input :username, label: false, placeholder: 'Username' %>
-    <%= f.password_field :password, label: false, placeholder: 'Password' %>
-    <%= f.submit 'Log in' %>
-  <% end %>
+      <%= f.input_field :username, label: false, placeholder: 'Username', style: 'height: 7.5vh; width: 150%; margin-bottom: 15%'%>
+      <%= f.password_field :password, label: false, placeholder: 'Password', style: 'height: 7.5vh; width: 150%; margin-bottom: 10%;' %>
+      <%= f.submit 'Log in', style: 'width: 75%;' %>
+    <% end %>
 </div>

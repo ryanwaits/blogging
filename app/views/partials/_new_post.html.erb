@@ -1,6 +1,7 @@
-<div class="form-wrapper">
-  <%= simple_form_for :post, url: posts_path do |f| %>
 
+
+<div class="form-wrapper" style="margin: 0;">
+  <%= simple_form_for :post, url: posts_path do |f| %>
     <% if @post.errors.any? %>
       <div class="post">
         <h3 class="title">There are <%= pluralize(@post.errors.count, 'error') %></h3>
@@ -10,8 +11,11 @@
       </div>
     <% end %>
 
-    <%= f.input :title, label: false, placeholder: 'Title' %>
-    <%= f.text_area :body, label: false, placeholder: 'Write your post' %>
-    <%= f.submit 'Submit Post' %>
+    <div class="form-wrapper" style="margin: 5% 10%;">
+      <h1 class="title">New Post</h1>
+      <%= f.input_field :title, label: false, placeholder: 'Title', class: 'input-class', style: 'margin: 0; width: 100%;' %>
+      <%= f.text_area :body, label: false, placeholder: 'Write your post', class: 'text-area', style: 'width: 250%; height: 30vh;' %>
+      <%= f.submit 'Submit Post', style: 'width: 50%;' %>
+    </div>
   <% end %>
 </div>
